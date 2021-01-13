@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../views/Home.vue'
+import ClientForm from '../views/ClientForm.vue'
 import Clients from '../views/Clients.vue'
 
 
@@ -10,8 +10,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'ClientForm',
+    component: ClientForm
   },
   {
     path: '/clients',
