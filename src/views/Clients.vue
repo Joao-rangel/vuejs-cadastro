@@ -24,13 +24,20 @@ export default {
     return {
       searchQuery: "",
       gridColumns: ["nome", "email", "cpf", "criado em"],
-      gridData: [
-        { nome: "Chuck Norris", email: "teste12@teste.com", cpf: Infinity, "criado em": "12/01/2021" },
-        { nome: "Bruce Lee", email: "teste23@teste.com", cpf: 9000, "criado em": "12/01/2021" },
-        { nome: "Jackie Chan", email: "teste44@teste.com", cpf: 7000, "criado em": "12/01/2021" },
-        { nome: "Jet Li", email: "teste45@teste.com", cpf: 8000, "criado em": "12/01/2021" }
-      ]
+      gridData: []
     }
+  },
+  methods: {
+    getClients() {
+      fetch("http://localhost:3333/client")
+        .then(response => response.json())
+        .then(response => {
+          this.gridData = response;
+        });
+    }
+  },
+  created() {
+    this.getClients();
   }
 }
 </script>

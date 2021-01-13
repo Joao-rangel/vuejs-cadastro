@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "id": 1,
+      "cpf": 12312312300,
+      "nome": "João Victor",
+      "email": "jv@teste.com",
+      "criado em": "12/01/2021"
+    },
+    {
+      "id": 2,
+      "cpf": 45645645600,
+      "nome": "João",
+      "email": "joao@teste.com",
+      "criado em": "12/01/2021"
+    },
+    {
+      "id": 3,
+      "cpf": 11122233399,
+      "nome": "Victor",
+      "email": "victor@teste.com",
+      "criado em": "12/01/2021"
+    },
+    {
+      "nome": "sdfsdfsdf",
+      "email": "ssdfsdfsdf",
+      "cpf": "21342342",
+      "id": 4
+    },
+    {
+      "nome": "khujbniuhniun",
+      "email": "mlijkmoiujn",
+      "cpf": "877657657",
+      "id": 5
+    }
+  ]
+}
