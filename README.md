@@ -1,24 +1,17 @@
 # vuejs-cadastro
 
-## Project setup
+## Instalação
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Iniciar servidor da aplicação
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Iniciar fake api
 ```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
+yarn json-server server.json -p 3333
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
