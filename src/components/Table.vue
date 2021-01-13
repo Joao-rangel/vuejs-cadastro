@@ -9,8 +9,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="entry in filteredHeroes" :key="entry">
-          <td v-for="key in columns" :key="key">
+        <tr v-for="entry in filteredClients" :key="entry">
+          <td v-for="key in columnKey" :key="key">
             {{entry[key]}}
           </td>
         </tr>
@@ -28,13 +28,14 @@
 
 export default {
   props: {
-        heroes: Array,
+        clients: Array,
         columns: Array,
+        columnKey: Array,
         filterKey: String
       },
       data: function () {
         var sortOrders = {};
-        this.columns.forEach(function (key) {
+        this.columnKey.forEach(function (key) {
           sortOrders[key] = 1;
         });
         return {
@@ -42,11 +43,11 @@ export default {
         };
       },
       computed: {
-        filteredHeroes: function () {
+        filteredClients: function () {
           var filterKey = this.filterKey && this.filterKey.toLowerCase();
-          var heroes = this.heroes;
+          var clients = this.clients;
           if (filterKey) {
-            heroes = heroes.filter(function (row) {
+            clients = clients.filter(function (row) {
               return Object.keys(row).some(function (key) {
                 return (
                   String(row[key])
@@ -56,8 +57,7 @@ export default {
               });
             });
           }
-          // var footerSize = heroes.size();
-          return heroes;
+          return clients;
         }
       },
             filters: {

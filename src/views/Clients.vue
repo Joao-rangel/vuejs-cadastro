@@ -8,7 +8,7 @@
       <input type="text" name="query" v-model="searchQuery">
     </form>
 
-    <Table :heroes="gridData" :columns="gridColumns" :filter-key="searchQuery" />
+    <Table :clients="gridData" :columns="gridColumns" :column-key="gridColumnKeys" :filter-key="searchQuery" />
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   data: function() {
     return {
       searchQuery: "",
+      gridColumnKeys: ["name", "email", "cpf", "created-at"],
       gridColumns: ["nome", "email", "cpf", "criado em"],
       gridData: []
     }
