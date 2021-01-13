@@ -131,6 +131,9 @@
 
     <div class="payment-confirmation">
       <h3>Seu cartão será debitado em R$ 49,00</h3>
+      <h3 class="error-message" v-show="valitationError">
+        Preencha os todos os campos para continuar
+      </h3>
       <button v-on:click.prevent="addClient" type="submit">
         REALIZAR MATRÍCULA
       </button>
@@ -147,26 +150,31 @@ export default {
       name: "",
       email: "",
       cpf: "",
+      address: "",
+      state: "",
+      cep: "",
+      city: "",
+      payment: "",
+      creditOwner: "",
+      creditExpirationMonth: "",
+      creditExpirationYear: "",
+      creditNumber: "",
+      creditSecurityCode: "",
+      date: new Date(),
+      valitationError: false,
     };
   },
   methods: {
     addClient() {
-      const formKeys = [
-        "name",
-        "email",
-        "cpf",
-        "address",
-        "state",
-        "cep",
-        "city",
-        "payment",
-        "creditCard",
-        "creditOwner",
-        "creditExpirationMonth",
-        "creditExpirationYear",
-        "creditNumber",
-        "creditSecurityCode",
-      ];
+      if (this.name.trim() === "") {
+        return (this.valitationError = true);
+      }
+      if (this.email.trim() === "") {
+        return (this.valitationError = true);
+      }
+      if (this.cpf.trim() === "") {
+        return (this.valitationError = true);
+      }
 
       const newClient = JSON.stringify({
         name: this.name,
@@ -177,6 +185,7 @@ export default {
         cep: this.cep,
         city: this.city,
         payment: this.payment,
+        createdAt: this.date,
         creditCard:
           this.payment === "bankSlip"
             ? undefined
@@ -202,9 +211,27 @@ export default {
           this.gridData = response;
         });
 
+      const formKeys = [
+        "name",
+        "email",
+        "cpf",
+        "address",
+        "state",
+        "cep",
+        "city",
+        "payment",
+        "creditOwner",
+        "creditExpirationMonth",
+        "creditExpirationYear",
+        "creditNumber",
+        "creditSecurityCode",
+      ];
+
       formKeys.forEach((key) => {
         this[key] = "";
       });
+
+      this.valitationError = false;
     },
   },
 };
@@ -278,6 +305,12 @@ hr {
 .payment-confirmation h3 {
   font-weight: 600;
   margin: 60px 0 16px 0;
+}
+
+.payment-confirmation .error-message {
+  font-weight: 600;
+  margin: 16px 0 16px 0;
+  color: red;
 }
 
 .payment-confirmation button {

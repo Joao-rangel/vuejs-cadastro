@@ -28,7 +28,7 @@ export default {
   data: function () {
     return {
       searchQuery: "",
-      gridColumnKeys: ["name", "email", "cpf", "created-at"],
+      gridColumnKeys: ["name", "email", "cpf", "createdAt"],
       gridColumns: ["nome", "email", "cpf", "criado em"],
       gridData: [],
     };
