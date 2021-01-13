@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header/>
-    <router-view />
+    <main>
+      <router-view />
+    </main>
     <Footer/>
   </div>
 </template>
@@ -26,12 +28,21 @@ export default {
     box-sizing: border-box;
   }
 
-  body {
-    background: #EFF4F9 ;
+  #app {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   body, input, button {
-    font: 16px Nunito, sans-serif;
+    font: 18px Nunito, arial, sans-serif;
+    color: #445566;
     -webkit-font-smoothing: antialiased
   }
 
