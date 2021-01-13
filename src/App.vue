@@ -1,52 +1,54 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header />
     <main>
       <router-view />
     </main>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default {
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
 
-  #app {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
-  body, input, button {
-    font: 18px Nunito, arial, sans-serif;
-    color: #445566;
-    -webkit-font-smoothing: antialiased
-  }
+body,
+input,
+button {
+  font: 18px Nunito, arial, sans-serif;
+  color: #445566;
+  -webkit-font-smoothing: antialiased;
+}
 
-  button {
-    cursor: pointer;
-  }
+button {
+  cursor: pointer;
+}
 </style>
